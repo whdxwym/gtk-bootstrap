@@ -31,6 +31,11 @@ build() {
 }
 
 for LIB in `cat "$MANIFEST"`; do
+	if [[ $LIB = \#* ]]
+	then
+		continue
+	fi
+	
 	echo
 	echo '*************************************************************************************'
 	echo "* Building $LIB"
